@@ -8,7 +8,7 @@ let prevCard;
 
 function showCard() {
   const [index, item, box] = [this.id, $(this).find('.cont__back'), $(this).find('.creation')];
-  item.css('background', `url('../images/characters/${board[index]}.png')`);
+  item.css('background', `url('./images/characters/${board[index]}.png')`);
   box.toggleClass('creation--active');
   prevCard = board[index];
 }
