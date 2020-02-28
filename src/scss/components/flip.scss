@@ -1,0 +1,63 @@
+@mixin creation{
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.creation {
+  width: 125px;
+  height: 125px;
+  float: left;
+  -webkit-transition: transform 0.6s ease-in-out;
+  -moz-transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  border-radius: 4px;
+
+  &__front{
+    @include creation;
+  }
+
+  &__back{
+    @include creation;
+
+    z-index: 999;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+}
+
+.creation--active {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+.cont {
+  width: 125px;
+  height: 125px;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &__front{
+    border: 4px solid var(--color-font);
+    width: 100%;
+    height: 100%;
+    background: url('../../images/card.png') center no-repeat;
+    border-radius: 4px;
+  }
+
+  &__back{
+    border: 4px solid var(--color-hover);
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
+}

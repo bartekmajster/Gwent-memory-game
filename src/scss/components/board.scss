@@ -1,0 +1,26 @@
+.main{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.board{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  &__card{
+    width: 125px;
+    height: 125px;
+    position: relative;
+  }
+}
+.score{
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
