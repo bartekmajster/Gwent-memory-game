@@ -16,7 +16,11 @@ export default function generateBoard() {
       count = 0;
     }
   }
-  board = board.map((item) => cardsOptions[item]);
+  board = board.map((item, index) => ({
+    name: cardsOptions[item],
+    index,
+    active: false,
+  }));
 
   return board;
 }
